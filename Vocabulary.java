@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 /**
  * Write a description of class Vocabulary here.
@@ -27,5 +29,29 @@ public class Vocabulary
     public void addWord(String inWord, String inAnswer)
     {
         mWords.add(new Word(inWord, inAnswer));
+    }
+    
+    public void removeWord(String inWord)
+    {
+        Word foundWord = null;
+        Iterator<Word> wordIterator = mWords.iterator();
+        while(wordIterator.hasNext() && foundWord == null)
+        {
+            Word word = wordIterator.next();
+            if(word.getWord().equals(inWord))
+            {
+                foundWord = word;
+            }
+        }
+        
+        if(foundWord != null)
+        {
+            mWords.remove(foundWord);
+        }
+    }
+    
+    public void removeRandomWord()
+    {
+        mWords.remove(new Random().nextInt(mWords.size()));
     }
 }

@@ -54,4 +54,22 @@ public class VocabularyTest
         vocabulary.addWord("hej", "hello");
         assertEquals("When a word has been added it should show.", 1, vocabulary.wordCount());
     }
+    
+    @Test
+    public void testRemovingWordUsingWord()
+    {
+        Vocabulary vocabulary = new Vocabulary();
+        vocabulary.addWord("hej", "hello");
+        vocabulary.removeWord("hej");
+        assertEquals("Word should have been removed.", 0, vocabulary.wordCount());
+    }
+    
+    @Test
+    public void testRemoveRandom()
+    {
+        Vocabulary voc = new Vocabulary();
+        voc.addWord("hej", "hello");
+        voc.removeRandomWord();
+        assertTrue(voc.wordCount() == 0);
+    }
 }
