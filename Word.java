@@ -24,4 +24,9 @@ public class Word
     {
         return mAnswer.equalsIgnoreCase(answer);
     }
+    
+    public String toString()
+    {
+        return mWord + " - " + mAnswer;
+    }
 }

@@ -60,5 +60,12 @@ public class WordTest
         Word word = new Word("hej", "hello");
         assertTrue(word.isCorrect("HELLO"));
     }
+    
+    @Test
+    public void testToStringReturnsWordAndAnswer()
+    {
+        Word word = new Word("hej", "hello");
+        assertTrue(word.toString().equals("hej - hello"));
+    }
 }
 
