@@ -13,7 +13,6 @@ public class VocabularyTrainer
     public VocabularyTrainer()
     {
         // initialise instance variables
-        x = 0;
     }
     
     public static void main(String[] args)
