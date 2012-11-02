@@ -29,4 +29,14 @@ public class Word
     {
         return mWord + " - " + mAnswer;
     }
+    
+    public String getAnswer()
+    {
+        return mAnswer;
+    }
+    
+    public String getWord()
+    {
+        return mWord;
+    }
 }
