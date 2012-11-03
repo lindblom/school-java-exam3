@@ -7,5 +7,5 @@
  */
 public enum VocabularyTrainerState
 {
-    RUNNING, EXIT
+    MAIN_MENU, RUN_TEST, MANAGE_VOCABULARY, EXIT
 }

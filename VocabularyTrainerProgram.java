@@ -9,6 +9,7 @@ public class VocabularyTrainerProgram
 {
     // instance variables - replace the example below with your own
     private VocabularyTester mTester;
+    //private VocabularyManager mManager;
     private Vocabulary mVoc;
 
     /**
@@ -18,18 +19,89 @@ public class VocabularyTrainerProgram
     {
         // initialise instance variables
         mTester = new VocabularyTester();
+        //mManager = new VocabularyManager();
         mVoc = new Vocabulary();
         seedVocabulary();
     }
     
     public void run()
     {
-        VocabularyTrainerState state = VocabularyTrainerState.RUNNING;
+        VocabularyTrainerState state;
+        
+        state = runMainMenu();
         
         while(state != VocabularyTrainerState.EXIT)
         {
-            state = VocabularyTrainerState.EXIT;
+            state = runState(state);
         }
+    }
+    
+    private VocabularyTrainerState runMainMenu()
+    {
+        printMainMenu();
+        return handleMainMenuInput(InputHandler.get());
+    }
+    
+    private void printMainMenu()
+    { 
+        System.out.println("Huvudmenyn");   
+    }
+    
+    private VocabularyTrainerState handleMainMenuInput(String inUserInput)
+    {
+        VocabularyTrainerState newState = VocabularyTrainerState.MAIN_MENU;
+        
+        if(inUserInput.equals("test"))
+        {
+            newState = VocabularyTrainerState.RUN_TEST;
+        }
+        else if(inUserInput.equals("hantera"))
+        {
+            newState = VocabularyTrainerState.MANAGE_VOCABULARY;
+        }
+        else if(inUserInput.equals("avsluta"))
+        {
+            newState = VocabularyTrainerState.EXIT;
+        }
+        else
+        {
+            System.out.println("Ogiltig inmatning");
+        }
+        
+        return newState;
+    }
+    
+    private VocabularyTrainerState runState(VocabularyTrainerState inState)
+    {
+        VocabularyTrainerState newState = VocabularyTrainerState.MAIN_MENU;
+        
+        switch(inState)
+        {
+            case MAIN_MENU:
+                newState = runMainMenu();
+                break;
+            case MANAGE_VOCABULARY:
+                System.out.println("Hanterar glosboken.");
+                //mVoc = VocabularyManager.run(mVoc);
+                //mVoc = new VocabularyManager(mVoc).run();
+                // 
+                break;
+            case RUN_TEST:
+                if(mTester.load(mVoc))
+                {
+                    System.out.println("Perfekt nu kör vi testet.");
+                    //mTester.run();
+                }
+                else
+                {
+                    System.out.println("Det måste finnas minst 10 glosor i glosboken.");
+                    newState = VocabularyTrainerState.MANAGE_VOCABULARY;
+                }
+                
+                break;
+        }
+        
+        return newState;
     }
     
     private void seedVocabulary()
