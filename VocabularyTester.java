@@ -1,11 +1,11 @@
 
 /**
- * Write a description of class TestVocabulary here.
+ * Write a description of class VocabularyTester here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TestVocabulary
+public class VocabularyTester
 {
     // instance variables - replace the example below with your own
     private Vocabulary mVoc;
@@ -13,7 +13,7 @@ public class TestVocabulary
     /**
      * Constructor for objects of class TestVocabulary
      */
-    public TestVocabulary()
+    public VocabularyTester()
     {
         // initialise instance variables
         mVoc = new Vocabulary();

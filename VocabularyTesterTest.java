@@ -11,12 +11,12 @@ import org.junit.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class TestVocabularyTest
+public class VocabularyTesterTest
 {
     /**
      * Default constructor for test class TestVocabularyTest
      */
-    public TestVocabularyTest()
+    public VocabularyTesterTest()
     {
     }
 
@@ -45,8 +45,8 @@ public class TestVocabularyTest
     {
         Vocabulary voc = getVocabularyWithWords(10);
         
-        TestVocabulary test = new TestVocabulary();
-        assertTrue(test.load(voc));
+        VocabularyTester tester = new VocabularyTester();
+        assertTrue(tester.load(voc));
     }
     
     @Test
@@ -54,8 +54,8 @@ public class TestVocabularyTest
     {
         Vocabulary voc = getVocabularyWithWords(5);
         
-        TestVocabulary test = new TestVocabulary();
-        assertFalse(test.load(voc));
+        VocabularyTester tester = new VocabularyTester();
+        assertFalse(tester.load(voc));
     }
     
     @Test
@@ -63,8 +63,8 @@ public class TestVocabularyTest
     {
         Vocabulary voc = getVocabularyWithWords(25);
         
-        TestVocabulary test = new TestVocabulary();
-        assertTrue(test.load(voc));
+        VocabularyTester tester = new VocabularyTester();
+        assertTrue(tester.load(voc));
     }
     
     private Vocabulary getVocabularyWithWords(int inWords)
