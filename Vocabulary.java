@@ -71,4 +71,11 @@ public class Vocabulary
     {
         return mWords.get(new Random().nextInt(mWords.size()));
     }
+    
+    private void shuffleOne()
+    {
+        Word word = getRandomWord();
+        mWords.remove(word);
+        mWords.add(word);
+    }
 }
