@@ -16,6 +16,7 @@ public class VocabularyManager
     {
         // initialise instance variables
         mVoc = inVoc;
+        mVoc.shuffleWords();
     }
 
     public Vocabulary manage()
@@ -78,11 +79,11 @@ public class VocabularyManager
                 break;
                 
             case ADD_WORD:
-                addAWord();
+                addAWordDialog();
                 break;
                 
             case REMOVE_WORD:
-                removeAWord();
+                removeAWordDialog();
                 break;
                 
             case LIST_WORDS:
@@ -104,7 +105,7 @@ public class VocabularyManager
         printWordList();
     }
     
-    private void removeAWord()
+    private void removeAWordDialog()
     {
         boolean done = false;
         String userInput;
@@ -152,13 +153,16 @@ public class VocabularyManager
         return done;
     }
     
-    private void addAWord()
+    private void addAWordDialog()
     {
         String word, answer, newWord;
+        
         System.out.println("Hur stavas ordet på svenska?");
         word = InputHandler.get();
+        
         System.out.println("Hur stavas det på engelska?");
         answer = InputHandler.get();
+        
         newWord = mVoc.addWord(word, answer);
         System.out.println("Glosan '" + newWord + "' har lagts till!");
     }
