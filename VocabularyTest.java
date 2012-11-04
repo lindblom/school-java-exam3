@@ -56,6 +56,14 @@ public class VocabularyTest
     }
     
     @Test
+    public void testAddingWordToVocabularyShouldReturnWordAsString()
+    {
+        Vocabulary vocabulary = new Vocabulary();
+        String result = vocabulary.addWord("hej", "hello");
+        assertTrue(result.equals("hej - hello"));
+    }
+    
+    @Test
     public void testRemovingWord()
     {
         Vocabulary vocabulary = new Vocabulary();

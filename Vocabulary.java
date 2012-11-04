@@ -38,9 +38,11 @@ public class Vocabulary
         return words;
     }
     
-    public void addWord(String inWord, String inAnswer)
+    public String addWord(String inWord, String inAnswer)
     {
-        mWords.add(new Word(inWord, inAnswer));
+        Word newWord = new Word(inWord, inAnswer);
+        mWords.add(newWord);
+        return newWord.toString();
     }
     
     public String removeWord(int inIndex)
