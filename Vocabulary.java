@@ -72,7 +72,7 @@ public class Vocabulary
         return mWords.get(new Random().nextInt(mWords.size()));
     }
     
-    private void shuffleOne()
+    private void shuffleOneWord()
     {
         Word word = getRandomWord();
         mWords.remove(word);
