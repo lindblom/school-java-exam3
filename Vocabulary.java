@@ -12,6 +12,7 @@ public class Vocabulary
 {
     // instance variables - replace the example below with your own
     private ArrayList<Word> mWords;
+    private int mDefaultShuffleFactor;
 
     /**
      * Constructor for objects of class Vocabulary
@@ -19,6 +20,7 @@ public class Vocabulary
     public Vocabulary()
     {
         mWords = new ArrayList<Word>();
+        mDefaultShuffleFactor = 4;
     }
     
     public int wordCount()
@@ -77,5 +79,18 @@ public class Vocabulary
         Word word = getRandomWord();
         mWords.remove(word);
         mWords.add(word);
+    }
+    
+    public void shuffleWords()
+    {
+        shuffleWords(mDefaultShuffleFactor);
+    }
+    
+    public void shuffleWords(int inShuffleFactor)
+    {
+        for(int i = 1; i < wordCount() * inShuffleFactor; i++)
+        {
+            shuffleOneWord();
+        }
     }
 }
