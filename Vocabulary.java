@@ -64,6 +64,11 @@ public class Vocabulary
     
     public void removeRandomWord()
     {
-        mWords.remove(new Random().nextInt(mWords.size()));
+        mWords.remove(getRandomWord());
+    }
+    
+    private Word getRandomWord()
+    {
+        return mWords.get(new Random().nextInt(mWords.size()));
     }
 }
