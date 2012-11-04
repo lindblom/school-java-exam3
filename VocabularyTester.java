@@ -24,6 +24,7 @@ public class VocabularyTester
         if(inVoc.wordCount() >= 10)
         {
             mVoc = inVoc;
+            mVoc.shuffleWords();
         } 
         
         while(mVoc.wordCount() > 10)
