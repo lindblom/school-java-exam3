@@ -95,7 +95,6 @@ public class VocabularyManager
     
     private void printWordList()
     {
-        System.out.println("Här är alla glosor:");
         System.out.print(mVoc.getWords());
     }
     
@@ -155,6 +154,12 @@ public class VocabularyManager
     
     private void addAWord()
     {
-        System.out.println("Lägg till ett ord.");
+        String word, answer, newWord;
+        System.out.println("Hur stavas ordet på svenska?");
+        word = InputHandler.get();
+        System.out.println("Hur stavas det på engelska?");
+        answer = InputHandler.get();
+        newWord = mVoc.addWord(word, answer);
+        System.out.println("Glosan '" + newWord + "' har lagts till!");
     }
 }
