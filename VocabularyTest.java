@@ -56,12 +56,20 @@ public class VocabularyTest
     }
     
     @Test
-    public void testRemovingWordUsingWord()
+    public void testRemovingWord()
     {
         Vocabulary vocabulary = new Vocabulary();
         vocabulary.addWord("hej", "hello");
-        vocabulary.removeWord("hej");
-        assertEquals("Word should have been removed.", 0, vocabulary.wordCount());
+        String result = vocabulary.removeWord(0);
+        assertTrue(result.equals("hej - hello"));
+    }
+    
+    @Test
+    public void testRemovingWordThatDoesntExist()
+    {
+        Vocabulary vocabulary = new Vocabulary();
+        String result = vocabulary.removeWord(0);
+        assertNull(result);
     }
     
     @Test

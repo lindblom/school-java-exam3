@@ -9,7 +9,6 @@ public class VocabularyTrainerProgram
 {
     // instance variables - replace the example below with your own
     private VocabularyTester mTester;
-    //private VocabularyManager mManager;
     private Vocabulary mVoc;
 
     /**
@@ -81,10 +80,7 @@ public class VocabularyTrainerProgram
                 newState = runMainMenu();
                 break;
             case MANAGE_VOCABULARY:
-                System.out.println("Hanterar glosboken.");
-                //mVoc = VocabularyManager.run(mVoc);
-                //mVoc = new VocabularyManager(mVoc).run();
-                // 
+                mVoc = new VocabularyManager(mVoc).manage();
                 break;
             case RUN_TEST:
                 if(mTester.load(mVoc))

@@ -26,28 +26,38 @@ public class Vocabulary
         return mWords.size();
     }
     
+    public String getWords()
+    {
+        String words = "";
+        int i = 1;
+        for(Word word : mWords)
+        {
+            words += i + ": " + word + "\n";
+            i++;
+        }
+        return words;
+    }
+    
     public void addWord(String inWord, String inAnswer)
     {
         mWords.add(new Word(inWord, inAnswer));
     }
     
-    public void removeWord(String inWord)
+    public String removeWord(int inIndex)
     {
-        Word foundWord = null;
-        Iterator<Word> wordIterator = mWords.iterator();
-        while(wordIterator.hasNext() && foundWord == null)
+        String result = null;
+        
+        try
         {
-            Word word = wordIterator.next();
-            if(word.getWord().equals(inWord))
-            {
-                foundWord = word;
-            }
+            result = mWords.get(inIndex).toString();
+            mWords.remove(inIndex);
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            
         }
         
-        if(foundWord != null)
-        {
-            mWords.remove(foundWord);
-        }
+        return result;
     }
     
     public void removeRandomWord()
