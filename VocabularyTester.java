@@ -21,7 +21,46 @@ public class VocabularyTester
     
     public void run()
     {
-        System.out.println("Perfekt nu kör vi testet.");
+        System.out.println("Väkommen till glostestet.");
+        Word[] testWords = mVoc.getWordsArray();
+        for(Word word : testWords)
+        {
+            askWord(word);
+        }
+        // print summary!
+    }
+    
+    private void askWord(Word word)
+    {
+        int thisTry = 1;
+        String answer = "";
+        String[] answers = new String[3];
+        
+        while(thisTry <= 3 && !word.isCorrect(answer))
+        {
+            System.out.println("Hur stavas '" + word.getWord() + "' på engelska?");
+            answer = InputHandler.get();
+            answers[thisTry - 1] = answer;
+            printAnswerFeedback(word.isCorrect(answer));
+            thisTry++;
+        }
+        
+        if(!word.isCorrect(answer))
+        {
+            System.out.println("Det rätta svaret var: " + word.getAnswer());
+        }
+    }
+    
+    private void printAnswerFeedback(boolean correct)
+    {
+        if(correct)
+        {
+            System.out.println("rätt!");
+        }
+        else
+        {
+            System.out.println("fel, försök igen!");
+        }
     }
     
     public boolean load(Vocabulary inVoc)

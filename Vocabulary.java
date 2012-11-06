@@ -40,6 +40,11 @@ public class Vocabulary
         return words;
     }
     
+    public Word[] getWordsArray()
+    {
+        return mWords.toArray(new Word[0]);
+    }
+    
     public String addWord(String inWord, String inAnswer)
     {
         Word newWord = new Word(inWord, inAnswer);

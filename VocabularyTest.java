@@ -88,4 +88,13 @@ public class VocabularyTest
         voc.removeRandomWord();
         assertTrue(voc.wordCount() == 0);
     }
+    
+    @Test
+    public void testGetWordsArray()
+    {
+        Vocabulary voc = new Vocabulary();
+        voc.addWord("hej", "hello");
+        Word[] wordArray = voc.getWordsArray();
+        assertTrue(wordArray.length == 1);
+    }
 }
