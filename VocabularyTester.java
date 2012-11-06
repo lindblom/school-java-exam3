@@ -19,13 +19,18 @@ public class VocabularyTester
         mVoc = new Vocabulary();
     }
     
+    public void run()
+    {
+        System.out.println("Perfekt nu kör vi testet.");
+    }
+    
     public boolean load(Vocabulary inVoc)
     {
         if(inVoc.wordCount() >= 10)
         {
             mVoc = inVoc;
             mVoc.shuffleWords();
-        } 
+        }
         
         while(mVoc.wordCount() > 10)
         {

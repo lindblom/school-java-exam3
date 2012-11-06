@@ -8,7 +8,6 @@
 public class VocabularyTrainerProgram
 {
     // instance variables - replace the example below with your own
-    private VocabularyTester mTester;
     private Vocabulary mVoc;
 
     /**
@@ -17,8 +16,6 @@ public class VocabularyTrainerProgram
     public VocabularyTrainerProgram()
     {
         // initialise instance variables
-        mTester = new VocabularyTester();
-        //mManager = new VocabularyManager();
         mVoc = new Vocabulary();
         seedVocabulary();
     }
@@ -83,10 +80,10 @@ public class VocabularyTrainerProgram
                 mVoc = new VocabularyManager(mVoc).manage();
                 break;
             case RUN_TEST:
-                if(mTester.load(mVoc))
+                VocabularyTester tester = new VocabularyTester();
+                if(tester.load(mVoc))
                 {
-                    System.out.println("Perfekt nu kör vi testet.");
-                    //mTester.run();
+                    tester.run();
                 }
                 else
                 {
