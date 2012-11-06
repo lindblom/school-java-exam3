@@ -16,7 +16,6 @@ public class VocabularyManager
     {
         // initialise instance variables
         mVoc = inVoc;
-        mVoc.shuffleWords();
     }
 
     public Vocabulary manage()
