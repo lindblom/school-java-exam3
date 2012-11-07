@@ -46,4 +46,39 @@ public class GuessBook
         
         mGuesses.put(inWord, guesses);
     }
+    
+    public String getGuesses(Word inWord)
+    {
+        String[] currentGuesses = mGuesses.get(inWord);
+        String result = "";
+        
+        if(currentGuesses != null)
+        {
+            for(String guess : currentGuesses)
+            {
+                if(result.length() == 0)
+                {
+                    result += guess;
+                }
+                else
+                {
+                    result += ", " + guess;
+                }
+            }
+        }
+        
+        return result;
+    }
+    
+    public boolean wasCorrect(Word inWord)
+    {
+        String[] currentGuesses = mGuesses.get(inWord);
+        boolean correct = false;
+        for(String guess : currentGuesses)
+        {
+            correct = correct || inWord.isCorrect(guess);
+        }
+        
+        return correct;
+    }
 }

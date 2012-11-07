@@ -67,4 +67,34 @@ public class GuessBookTest
         gb.addGuess(word, "test");
         assertTrue(gb.getGuesses(word).equals("test"));
     }
+    
+    @Test
+    public void testGetGuessesWithMoreWords()
+    {
+        GuessBook gb = new GuessBook();
+        Word word = new Word("hej", "hello");
+        gb.addGuess(word, "test");
+        gb.addGuess(word, "test2");
+        assertTrue(gb.getGuesses(word).equals("test, test2"));
+    }
+    
+    @Test
+    public void testWasCorrect()
+    {
+        GuessBook gb = new GuessBook();
+        Word word = new Word("hej", "hello");
+        gb.addGuess(word, "test");
+        gb.addGuess(word, "hello");
+        assertTrue(gb.wasCorrect(word));
+    }
+    
+    @Test
+    public void testWasntCorrect()
+    {
+        GuessBook gb = new GuessBook();
+        Word word = new Word("hej", "hello");
+        gb.addGuess(word, "test");
+        gb.addGuess(word, "y0");
+        assertFalse(gb.wasCorrect(word));
+    }
 }
