@@ -89,7 +89,7 @@ public class VocabularyManager
                 break;
                 
             case LIST_WORDS:
-                printWordList();
+                listWords();
                 break;
         }
         
