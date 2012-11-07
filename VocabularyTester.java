@@ -29,28 +29,29 @@ public class VocabularyTester
         {
             askWord(word);
         }
-        /*
+        
         for(Word word : testWords)
         {
-            System.out.println("Ordet var: " + word.getWord());
-            boolean correct = false;
-            
-            System.out.print("Du gissade: ");
-            for(String guess : mGuesses.get(word))
-            {
-                System.out.print(guess + " ");
-                correct = word.isCorrect(guess);
-            }
-            
-            if(correct)
-            {
-                System.out.print("-- Vilket var rätt!");
-            }
-            else
-            {
-                System.out.print("-- Rätt svar var " + word.getAnswer());
-            }
-        }*/
+            printSummary(word);
+        }
+    }
+    
+    private void printSummary(Word inWord)
+    {
+        System.out.println("Ordet var: " + inWord.getWord());
+        
+        System.out.print("Du gissade: ");
+        
+        System.out.print(mGuessBook.getGuesses(inWord));
+        
+        if(mGuessBook.wasCorrect(inWord))
+        {
+            System.out.println("-- Vilket var rätt!");
+        }
+        else
+        {
+            System.out.println("-- Rätt svar var " + inWord.getAnswer());
+        }
     }
     
     private void askWord(Word word)
