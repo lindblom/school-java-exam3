@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class VocabularyTrainerState - write a description of the enum class here
+ * Enumeration class VocabularyTrainerState - Handles the different states in the main menu.
  * 
  * @author Christopher Lindblom 
  * @version 2012-11-08
