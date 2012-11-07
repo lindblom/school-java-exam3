@@ -32,6 +32,13 @@ public class VocabularyTrainerProgram
         }
     }
     
+    private void printWelcomeMessage()
+    {
+        System.out.println("Hej och välkommen till glosövningsprogrammet VocabularyTrainer!");
+        System.out.println("Programmet är förladdat med svensk-engelska glosor för");
+        System.out.println("några ord som ofta felstavas.\n";
+    }
+    
     private VocabularyTrainerState runMainMenu()
     {
         printMainMenu();
@@ -40,7 +47,10 @@ public class VocabularyTrainerProgram
     
     private void printMainMenu()
     { 
-        System.out.println("Huvudmenyn");   
+        System.out.println("Vad vill du göra?");
+        System.out.println("test    : för köra ett glostest.");
+        System.out.println("hantera : för att lägga till/ta bort/lista glosor.");
+        System.out.println("avsluta : för att avsluta programmet.");
     }
     
     private VocabularyTrainerState handleMainMenuInput(String inUserInput)
