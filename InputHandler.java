@@ -21,6 +21,6 @@ public class InputHandler
     {
         System.out.print("> ");
         String input = mScanner.nextLine();
-        return input;
+        return input.toLowerCase();
     }
 }
