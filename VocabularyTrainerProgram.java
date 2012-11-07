@@ -24,6 +24,8 @@ public class VocabularyTrainerProgram
     {
         VocabularyTrainerState state;
         
+        printWelcomeMessage();
+        
         state = runMainMenu();
         
         while(state != VocabularyTrainerState.EXIT)

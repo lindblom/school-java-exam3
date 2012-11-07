@@ -160,11 +160,20 @@ public class VocabularyManager
     {
         String word, answer, newWord;
         
-        System.out.println("Hur stavas ordet på svenska?");
-        word = InputHandler.get();
         
-        System.out.println("Hur stavas det på engelska?");
-        answer = InputHandler.get();
+        word = "";
+        while(word.length() == 0)
+        {
+            System.out.println("Hur stavas ordet på svenska?");
+            word = InputHandler.get();
+        }
+        
+        answer = "";
+        while(answer.length() == 0)
+        {
+            System.out.println("Hur stavas det på engelska?");
+            answer = InputHandler.get();
+        }
         
         newWord = mVoc.addWord(word, answer);
         System.out.println("Glosan '" + newWord + "' har lagts till!");
