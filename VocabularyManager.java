@@ -37,7 +37,10 @@ public class VocabularyManager
     
     private void printMainMenu()
     {
-        System.out.println("Hantera glosboken");
+        System.out.println("Hantera glosboken - Vad vill du göra?");
+        System.out.println("lista     : för att lista orden i ordboken.");
+        System.out.println("lägg till : för att lägga till ord.");
+        System.out.println("ta bort   : för att ta bort ett ord.");
     }
     
     private VocabularyManagerState handleMainMenuInput(String inUserInput)
