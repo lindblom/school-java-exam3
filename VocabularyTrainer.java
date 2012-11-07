@@ -3,7 +3,7 @@
  * Write a description of class VocabularyTrainer here.
  * 
  * @author Christopher Lindblom 
- * @version (a version number or a date)
+ * @version 2012-11-08
  */
 public class VocabularyTrainer
 {

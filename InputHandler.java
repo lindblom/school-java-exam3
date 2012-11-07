@@ -2,8 +2,8 @@ import java.util.Scanner;
 /**
  * Write a description of class InputHandler here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Christopher Lindblom 
+ * @version 2012-11-08
  */
 public class InputHandler
 {

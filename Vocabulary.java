@@ -5,8 +5,8 @@ import java.util.Random;
 /**
  * Write a description of class Vocabulary here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Christopher Lindblom 
+ * @version 2012-11-08
  */
 public class Vocabulary
 {

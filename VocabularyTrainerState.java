@@ -2,8 +2,8 @@
 /**
  * Enumeration class VocabularyTrainerState - write a description of the enum class here
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Christopher Lindblom 
+ * @version 2012-11-08
  */
 public enum VocabularyTrainerState
 {

@@ -2,8 +2,8 @@
 /**
  * Write a description of class Word here.
  * 
- * @author Christopher Lindblom
- * @version (a version number or a date)
+ * @author Christopher Lindblom 
+ * @version 2012-11-08
  */
 public class Word
 {
