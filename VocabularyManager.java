@@ -37,7 +37,7 @@ public class VocabularyManager
     
     private void printMainMenu()
     {
-        System.out.println("Hantera glosboken - Vad vill du göra?");
+        System.out.println("\nHantera glosboken - Vad vill du göra?");
         System.out.println("lista     : för att lista orden i ordboken.");
         System.out.println("lägg till : för att lägga till ord.");
         System.out.println("ta bort   : för att ta bort ett ord.");
@@ -104,7 +104,7 @@ public class VocabularyManager
     
     private void listWords()
     {
-        System.out.println("Här är alla glosor:");
+        System.out.println("\nHär är alla glosor:");
         printWordList();
     }
     
@@ -115,7 +115,7 @@ public class VocabularyManager
         
         while(!done)
         {
-            System.out.println("Vilken glosa vill du ta bort.");
+            System.out.println("\nVilken glosa vill du ta bort.");
             
             printWordList();
             System.out.println("0: Ångra");
