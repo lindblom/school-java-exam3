@@ -1,25 +1,30 @@
 
 /**
- * Write a description of class VocabularyTrainerUI here.
+ * VocabularyTrainerProgram is a program to test word spelling.
  * 
  * @author Christopher Lindblom 
  * @version 2012-11-08
  */
 public class VocabularyTrainerProgram
 {
-    // instance variables - replace the example below with your own
+    // instance variable to hold the vocabulary
     private Vocabulary mVoc;
 
     /**
-     * Constructor for objects of class VocabularyTrainerUI
+     * Constructor for objects of class VocabularyTrainerProgram
      */
     public VocabularyTrainerProgram()
     {
-        // initialise instance variables
+        // initialise the vocabulary
         mVoc = new Vocabulary();
+        
+        // seed the vocabulary with some seed data
         seedVocabulary();
     }
     
+    /**
+     * The metod to start running the VocabularyTrainer program.
+     */
     public void run()
     {
         VocabularyTrainerState state;
@@ -34,6 +39,9 @@ public class VocabularyTrainerProgram
         }
     }
     
+    /**
+     * Prints a welcome message.
+     */
     private void printWelcomeMessage()
     {
         System.out.println("Hej och välkommen till glosövningsprogrammet VocabularyTrainer!");
@@ -41,12 +49,20 @@ public class VocabularyTrainerProgram
         System.out.println("några ord som ofta felstavas.");
     }
     
+    /**
+     * Run main menu.
+     * 
+     * @return  the new state after the menu
+     */
     private VocabularyTrainerState runMainMenu()
     {
         printMainMenu();
         return handleMainMenuInput(InputHandler.get());
     }
     
+    /**
+     * Prints the main menu.
+     */
     private void printMainMenu()
     { 
         System.out.println("\nHuvudmenyn - Vad vill du göra?");
@@ -55,8 +71,14 @@ public class VocabularyTrainerProgram
         System.out.println("avsluta : för att avsluta programmet.");
     }
     
+    /**
+     * Handles input from the main menu.
+     * 
+     * @param   String  the users input
+     */
     private VocabularyTrainerState handleMainMenuInput(String inUserInput)
     {
+        // MAIN_MENU is the default new state
         VocabularyTrainerState newState = VocabularyTrainerState.MAIN_MENU;
         
         if(inUserInput.equals("test"))
@@ -79,6 +101,12 @@ public class VocabularyTrainerProgram
         return newState;
     }
     
+    /**
+     * Runs the selected state.
+     * 
+     * @param   VocabularyTrainerState  the state to run
+     * @return                          the new state after the input state has been ran
+     */
     private VocabularyTrainerState runState(VocabularyTrainerState inState)
     {
         VocabularyTrainerState newState = VocabularyTrainerState.MAIN_MENU;
@@ -88,17 +116,22 @@ public class VocabularyTrainerProgram
             case MAIN_MENU:
                 newState = runMainMenu();
                 break;
+                
             case MANAGE_VOCABULARY:
                 mVoc = new VocabularyManager(mVoc).manage();
                 break;
+                
             case RUN_TEST:
                 VocabularyTester tester = new VocabularyTester();
+                
+                // loads and checks if the vocabulary is valid
                 if(tester.load(mVoc))
                 {
                     tester.run();
                 }
                 else
                 {
+                    // show user a message and send user to management menu
                     System.out.println("Det måste finnas minst 10 glosor i glosboken.");
                     newState = VocabularyTrainerState.MANAGE_VOCABULARY;
                 }
@@ -109,6 +142,9 @@ public class VocabularyTrainerProgram
         return newState;
     }
     
+    /**
+     * Seeds the vocabulary with ten often misspelled words.
+     */
     private void seedVocabulary()
     {
         // ten often misspelled words.
