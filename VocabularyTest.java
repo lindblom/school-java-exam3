@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -40,6 +38,9 @@ public class VocabularyTest
     {
     }
     
+    /**
+     * Test: New vocabularies should be empty.
+     */
     @Test
     public void testNewVocabulariesHaveNoWords()
     {
@@ -47,6 +48,9 @@ public class VocabularyTest
         assertEquals("New vocabulary should not contain any words.", 0, vocabulary.wordCount());
     }
     
+    /**
+     * Test: Adding words to vocabulary should count.
+     */
     @Test
     public void testAddingWordToVocabularyShouldCount()
     {
@@ -55,6 +59,9 @@ public class VocabularyTest
         assertEquals("When a word has been added it should show.", 1, vocabulary.wordCount());
     }
     
+    /**
+     * Test: Adding words returns the correct String.
+     */
     @Test
     public void testAddingWordToVocabularyShouldReturnWordAsString()
     {
@@ -63,6 +70,9 @@ public class VocabularyTest
         assertTrue(result.equals("hej - hello"));
     }
     
+    /**
+     * Test: Removing words should work.
+     */
     @Test
     public void testRemovingWord()
     {
@@ -72,6 +82,9 @@ public class VocabularyTest
         assertTrue(result.equals("hej - hello"));
     }
     
+    /**
+     * Test: Returns null when trying to remove word that doesn't exist.
+     */
     @Test
     public void testRemovingWordThatDoesntExist()
     {
@@ -80,6 +93,9 @@ public class VocabularyTest
         assertNull(result);
     }
     
+    /**
+     * Test: Remove random word removes a word.
+     */
     @Test
     public void testRemoveRandom()
     {
@@ -89,6 +105,9 @@ public class VocabularyTest
         assertTrue(voc.wordCount() == 0);
     }
     
+    /**
+     * Test: Should return words as an array of Strings.
+     */
     @Test
     public void testGetWordsArray()
     {
