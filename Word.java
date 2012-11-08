@@ -7,12 +7,15 @@
  */
 public class Word
 {
-
+    // instance variables
     private String mWord;
     private String mAnswer;
     
     /**
-     * Constructor for objects of class Word
+     * Constructor for objects of class Word.
+     * 
+     * @param   String  the word (question)
+     * @param   String  the translation (answer)
      */
     public Word(String inWord, String inAnswer)
     {
@@ -20,21 +23,42 @@ public class Word
         mAnswer = inAnswer;
     }
     
-    public boolean isCorrect(String answer)
+    /**
+     * Check to see if an answer is correct.
+     * 
+     * @param   String  guess
+     * @return          true if it is correct
+     */
+    public boolean isCorrect(String inGuess)
     {
-        return mAnswer.equalsIgnoreCase(answer);
+        return mAnswer.equalsIgnoreCase(inGuess);
     }
     
+    /**
+     * Overridden toString().
+     * 
+     * @return  "word - answer" format
+     */
     public String toString()
     {
         return mWord + " - " + mAnswer;
     }
     
+    /**
+     * Accessor for answer.
+     * 
+     * @return the answer
+     */
     public String getAnswer()
     {
         return mAnswer;
     }
     
+    /**
+     * Accessor for word.
+     * 
+     * @return the word
+     */
     public String getWord()
     {
         return mWord;
