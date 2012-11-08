@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -40,6 +38,9 @@ public class WordTest
     {
     }
 
+    /**
+     * Test: that the isCorrect method works when correct is given.
+     */
     @Test
     public void testIsCorrect()
     {
@@ -47,6 +48,9 @@ public class WordTest
         assertTrue(word.isCorrect("hello"));
     }
     
+    /**
+     * Test: that the isCorrect method works when correct is not given.
+     */
     @Test
     public void testIsNotCorrectWhenWrong()
     {
@@ -54,6 +58,9 @@ public class WordTest
         assertFalse(word.isCorrect("hej"));
     }
     
+    /**
+     * Test: test that isCorrect isn't case sentitive.
+     */
     @Test
     public void testIsCorrectWithDifferentCase()
     {
@@ -61,6 +68,9 @@ public class WordTest
         assertTrue(word.isCorrect("HELLO"));
     }
     
+    /**
+     * Test: that toString returns the correct format.
+     */
     @Test
     public void testToStringReturnsWordAndAnswer()
     {
