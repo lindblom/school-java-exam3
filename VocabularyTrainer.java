@@ -8,7 +8,8 @@
 public class VocabularyTrainer
 {
     /**
-     * Constructor for objects of class VocabularyTrainer, but dont use it just call the static method run.
+     * Constructor for objects of class VocabularyTrainer, but don't use it.
+     * Just call the static method run.
      */
     public VocabularyTrainer()
     {

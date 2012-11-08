@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class VocabularyManagerState - write a description of the enum class here
+ * Enumeration class VocabularyManagerState - Handles the different states in the management menu.
  * 
  * @author Christopher Lindblom 
  * @version 2012-11-08
