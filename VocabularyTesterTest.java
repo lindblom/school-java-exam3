@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -40,6 +38,9 @@ public class VocabularyTesterTest
     {
     }
     
+    /**
+     * Test: that load is true when ten words is in the vocabulary
+     */
     @Test
     public void testLoadShouldBeTrueWhenTenWordsIsInTheVocabulary()
     {
@@ -49,6 +50,9 @@ public class VocabularyTesterTest
         assertTrue(tester.load(voc));
     }
     
+    /**
+     * Test: that load is false when less than ten words is in the vocabulary
+     */
     @Test
     public void testLoadShouldBeFalseWhenLessThanTenWordsIsInTheVocabulary()
     {
@@ -58,6 +62,9 @@ public class VocabularyTesterTest
         assertFalse(tester.load(voc));
     }
     
+    /**
+     * Test: that load is true when 10+ words is in the vocabulary
+     */
     @Test
     public void testLoadShouldBeTrueWhenMoreThanTenWordsIsInTheVocabulary()
     {
@@ -67,6 +74,12 @@ public class VocabularyTesterTest
         assertTrue(tester.load(voc));
     }
     
+    /**
+     * A factory for creating vocabularies for the tests.
+     * 
+     * @params  int     the number of words you want in the vocabulary
+     * @return          the newly created vocabulary
+     */
     private Vocabulary getVocabularyWithWords(int inWords)
     {
         Vocabulary voc = new Vocabulary();

@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class Vocabulary
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private ArrayList<Word> mWords;
     private int mDefaultShuffleFactor;
 
@@ -23,11 +23,21 @@ public class Vocabulary
         mDefaultShuffleFactor = 4;
     }
     
+    /**
+     * Word count of the vocabulary.
+     * 
+     * @return  the word count of the vocabulary
+     */
     public int wordCount()
     {
         return mWords.size();
     }
     
+    /**
+     * Get the words as a numbered list.
+     * 
+     * @return  the words as a numbered list(String)
+     */
     public String getWords()
     {
         String words = "";
@@ -40,11 +50,23 @@ public class Vocabulary
         return words;
     }
     
+    /**
+     * Get the words as an array of Word objects.
+     * 
+     * @return the array of Word objects
+     */
     public Word[] getWordsArray()
     {
         return mWords.toArray(new Word[0]);
     }
     
+    /**
+     * Add a word to the vocabulary.
+     * 
+     * @param   String  word
+     * @param   String  answer
+     * @return          the newly created word as a String
+     */
     public String addWord(String inWord, String inAnswer)
     {
         Word newWord = new Word(inWord, inAnswer);
@@ -52,6 +74,13 @@ public class Vocabulary
         return newWord.toString();
     }
     
+    /**
+     * Remove a word from the vocabulary.
+     * Returns null if invalid index is given.
+     * 
+     * @param   int     index of the word to be removed
+     * @return          a string representation of the removed word
+     */
     public String removeWord(int inIndex)
     {
         String result = null;
@@ -63,22 +92,33 @@ public class Vocabulary
         }
         catch(IndexOutOfBoundsException e)
         {
-            
+            // do nothing
         }
         
         return result;
     }
     
+    /**
+     * Remove random word from vocabulary.
+     */
     public void removeRandomWord()
     {
         mWords.remove(getRandomWord());
     }
     
+    /**
+     * Get random word from vocabulary.
+     * 
+     * @return  the a random word
+     */
     private Word getRandomWord()
     {
         return mWords.get(new Random().nextInt(mWords.size()));
     }
     
+    /**
+     * Suffle one word.
+     */
     private void shuffleOneWord()
     {
         Word word = getRandomWord();
@@ -86,11 +126,19 @@ public class Vocabulary
         mWords.add(word);
     }
     
+    /**
+     * Suffle words by the default factor.
+     */
     public void shuffleWords()
     {
         shuffleWords(mDefaultShuffleFactor);
     }
     
+    /**
+     * Suffle word by selected factor.
+     * 
+     * @params  int     suffle factor
+     */
     public void shuffleWords(int inShuffleFactor)
     {
         for(int i = 1; i < wordCount() * inShuffleFactor; i++)

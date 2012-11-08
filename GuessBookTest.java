@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -40,6 +38,9 @@ public class GuessBookTest
     {
     }
     
+    /**
+     * Test: Check to see that the first guess counts.
+     */
     @Test
     public void testCountAfterAddingGuess()
     {
@@ -49,6 +50,9 @@ public class GuessBookTest
         assertTrue(gb.countGuesses(word) == 1);
     }
     
+    /**
+     * Test: Check to see that the later words count.
+     */
     @Test
     public void testCountAfterAddingAnotherGuess()
     {
@@ -59,6 +63,9 @@ public class GuessBookTest
         assertTrue(gb.countGuesses(word) == 2);
     }
     
+    /**
+     * Test: Check to see that getGuesses returns the correct format (one word)
+     */
     @Test
     public void testGetGuessesWithOneWord()
     {
@@ -68,6 +75,9 @@ public class GuessBookTest
         assertTrue(gb.getGuesses(word).equals("test"));
     }
     
+    /**
+     * Test: Check to see that getGuesses returns the correct format (2+ word)
+     */
     @Test
     public void testGetGuessesWithMoreWords()
     {
@@ -78,6 +88,9 @@ public class GuessBookTest
         assertTrue(gb.getGuesses(word).equals("test, test2"));
     }
     
+    /**
+     * Test: Check to see that the wasCorrect returns true if the correct guess was among the guesses.
+     */
     @Test
     public void testWasCorrect()
     {
@@ -88,6 +101,9 @@ public class GuessBookTest
         assertTrue(gb.wasCorrect(word));
     }
     
+    /**
+     * Test: Check to see that the wasCorrect returns false if the correct guess wasn't among the guesses.
+     */
     @Test
     public void testWasntCorrect()
     {
