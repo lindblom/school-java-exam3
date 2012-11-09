@@ -30,7 +30,7 @@ public class InputHandler
         printCursor();
         
         String input = mScanner.nextLine();
-        return input.toLowerCase();
+        return input.toLowerCase().trim();
     }
     
     /**
