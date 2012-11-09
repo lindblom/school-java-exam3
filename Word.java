@@ -19,8 +19,8 @@ public class Word
      */
     public Word(String inWord, String inAnswer)
     {
-        mWord = inWord;
-        mAnswer = inAnswer;
+        mWord = inWord.trim();
+        mAnswer = inAnswer.trim();
     }
     
     /**
