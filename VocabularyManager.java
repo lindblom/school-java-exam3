@@ -18,7 +18,7 @@ public class VocabularyManager
     public VocabularyManager(Vocabulary inVoc)
     {
         // initialise instance variable with paramter
-        mVoc = inVoc;
+        mVoc = inVoc.copy();
     }
     
     /**

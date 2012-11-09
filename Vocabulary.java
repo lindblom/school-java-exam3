@@ -135,6 +135,24 @@ public class Vocabulary
     }
     
     /**
+     * Copy the vocabulary.
+     * 
+     * @return      a copy of the vocabulary
+     */
+    public Vocabulary copy()
+    {
+        Vocabulary newVoc = new Vocabulary();
+        Word[] words = getWordsArray();
+        
+        for(Word word : words)
+        {
+            newVoc.addWord(word.getWord(), word.getAnswer());
+        }
+        
+        return newVoc;
+    }
+    
+    /**
      * Suffle word by selected factor.
      * 
      * @params  int     suffle factor

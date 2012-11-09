@@ -115,7 +115,7 @@ public class VocabularyTester
     {
         if(inVoc.wordCount() >= 10)
         {
-            mVoc = inVoc;
+            mVoc = inVoc.copy();
             mVoc.shuffleWords();
         }
         

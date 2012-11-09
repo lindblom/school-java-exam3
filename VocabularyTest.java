@@ -116,4 +116,17 @@ public class VocabularyTest
         Word[] wordArray = voc.getWordsArray();
         assertTrue(wordArray.length == 1);
     }
+    
+    /**
+     * Test: Copy should do a deep copy of word objects.
+     */
+    @Test
+    public void testCopy()
+    {
+        Vocabulary voc = new Vocabulary();
+        voc.addWord("hej", "hello");
+        Vocabulary vocCopy = voc.copy();
+        vocCopy.removeRandomWord();
+        assertTrue(voc.wordCount() != vocCopy.wordCount());
+    }
 }
